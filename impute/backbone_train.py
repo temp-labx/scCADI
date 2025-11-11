@@ -1,11 +1,7 @@
-
 import warnings
 import re
 from sklearn.preprocessing import LabelEncoder
-
-
 import argparse
-
 from guided_diffusion import logger
 from guided_diffusion.datasets_loader import load_data
 from guided_diffusion.resample import create_named_schedule_sampler
@@ -16,7 +12,6 @@ from guided_diffusion.script_util import (
     add_dict_to_argparser,
 )
 from guided_diffusion.cell_model import DiT_model
-
 from guided_diffusion.train_util import TrainLoop
 import pandas as pd
 import torch
@@ -63,8 +58,6 @@ def create_argparser(index,steps,save_steps,batch):
         parser = argparse.ArgumentParser()
         add_dict_to_argparser(parser, defaults)
         return parser
-
-
 
 def main():
     setup_seed(1234)
