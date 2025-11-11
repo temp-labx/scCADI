@@ -5,15 +5,11 @@ import warnings
 import re
 import anndata as ad
 from sklearn.cluster import KMeans
-
-
-
 import numpy as np
 import torch as th
 import torch.distributed as dist
 import torch.nn.functional as F
 from sklearn.preprocessing import LabelEncoder
-
 from guided_diffusion import logger
 from guided_diffusion.script_util import (
     diffusion_defaults,
@@ -29,8 +25,6 @@ from guided_diffusion.datasets_loader import load_data
 from guided_diffusion.cell_model import DiT_model
 from AE.AE_model import AE
 import random
-
-
 def create_argparser(data_index):
     defaults = dict(
         clip_denoised=True,
@@ -94,8 +88,6 @@ def indentify(adata,n_clusters):
     true_masks = np.isnan(observed_values)
     true_masks = np.where(true_masks, 1, 0)
     return true_masks,row_names,col_names
-
-
 
 
 def main():
@@ -199,3 +191,4 @@ def main():
 
 if __name__ == "__main__":
         main()
+
