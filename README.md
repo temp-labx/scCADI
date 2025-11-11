@@ -4,8 +4,15 @@ a conditional diffusion-based imputation framework for scRNA-seq data
 scCADI, a conditional diffusion-based imputation framework for scRNA-seq data. The framework aims to achieve robust imputation across multiple datasets and application scenarios while facilitating downstream analyses. In scCADI, an autoencoder first projects each cell into the latent space, where the observed data and metadata are integrated as conditional priors to guide the diffusion process in learning biologically meaningful expression patterns. With this design, scCADI achieves accurate gene expression data recovery while preserving intrinsic biological variability among cells.
 ## Requirements
 ```text
-Python==3.8.0   
-torch==1.11.0
+python==3.8.0   
+pytorch==1.11.0
+numpy==1.24.4
+anndata==0.9.2
+scanpy==1.9.8
+scikit-learn==1.3.2
+pandas==2.0.3
+mpi4py==4.0.0
+tqdm==4.66.5
 ```
 You can install dependencies with:
 ```bash
