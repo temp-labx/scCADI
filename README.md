@@ -20,12 +20,24 @@ pip install -r requirements.txt
 ```
 ## Usage
 We can quickly start scCADI:
-### Step 1: process data
+### Step 1: Data Preprocess
 We need a .h5ad file or .csv file of scRNA-seq dataset, where each row represents a cell and each column corresponds to a gene.The `impute/data_process.py` Python script is used to preprocess data, obtaining the pre-processed data used for training the model is formatted in h5ad.
 ```bash
 python data_process.py
 ```
-### Step 2: train model
-XXX
-
+### Step 2: Train the Autoencoder
+The `AE/AE_train.py` Python script is used to train autoencoder model, resulting in a trained AE.
+```bash
+python AE_train.py
+```
+### Step 3: Train the Conditional Diffusion model
+The `impute/backbone_train.py` Python script is used to train conditional diffusion model in the latent space learned by the AE, incorporating prior biological knowledge as conditional input during training,to obtain the trained diffusion model.
+```bash
+python backbone_train.py
+```
+### Step 4: Sample and Imputation
+The `impute/impute.py` Python script is used to generate cell-wise latent embeddings from the trained diffusion model. These embeddings are decoded to recover dropout values and obtain the imputed scRNA-seq data.
+```bash
+python impute.py
+```
 
