@@ -10,5 +10,8 @@ We can quickly start scCADI:
 data process
 ```bash
 python data_process.py
+```
+### Step 2: train model
+XXX
 
 
