@@ -1,4 +1,4 @@
-# scCADI: Cell-Aware Diffusion for Single-Cell RNA-seq Imputation
+# scCADI: Cell-Aware Diffusion Model for Single-Cell RNA-seq Imputation
 a conditional diffusion-based imputation framework for scRNA-seq data
 ## Introduction
 scCADI, a conditional diffusion-based imputation framework for scRNA-seq data. At the training stage, an autoencoder first projects each cell into the latent space, where the observed data and metadata information as conditioning factors to guide the denoising process in learning biologically meaningful expression patterns. At the imputation stage, cell-wise latent embeddings are generated and decoded to impute the identified dropout sites, thereby recovering accurate gene expression profiles. With this design, scCADI achieves robust imputation across multiple datasets and application scenarios while facilitating downstream analyses.
