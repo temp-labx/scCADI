@@ -8,7 +8,6 @@ import sys
 sys.path.append("..")
 from datasets_loader import load_train_valid
 import scanpy as sc
-torch.autograd.set_detect_anomaly(True)
 import random
 
 def seed_everything(seed):
