@@ -208,9 +208,9 @@ class MixedPrecisionTrainer:
         return True
 
     def _optimize_normal(self, opt: th.optim.Optimizer):
-        grad_norm, param_norm = self._compute_norms()
-        logger.logkv_mean("grad_norm", grad_norm)
-        logger.logkv_mean("param_norm", param_norm)
+        #grad_norm, param_norm = self._compute_norms()
+        #logger.logkv_mean("grad_norm", grad_norm)
+        #logger.logkv_mean("param_norm", param_norm)
         opt.step()
         return True
 
